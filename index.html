@@ -5,10 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="description"
-    content="RadarQA: Multi-modal Quality Analysis of Weather Radar Forecasts">
+    content="RULER-Bench: Probing Rule-based Reasoning Abilities of Next-level Video Generation Models for Vision Foundation Intelligence">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RadarQA: Multi-modal Quality Analysis of Weather Radar Forecasts</title>
+  <title>RULER-Bench: Probing Rule-based Reasoning Abilities of Next-level Video Generation Models for Vision Foundation Intelligence</title>
 
   <!--   Global site tag (gtag.js) - Google Analytics-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVQZ7NHC"></script>
@@ -28,18 +28,18 @@
 
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
-  <link rel="stylesheet" href="./assets/artimuse/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/artimuse/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./assets/artimuse/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./assets/artimuse/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./assets/ruler_bench/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/ruler_bench/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/ruler_bench/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/ruler_bench/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./assets/artimuse/css/index.css">
+  <link rel="stylesheet" href="./assets/ruler_bench/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./assets/artimuse/js/fontawesome.all.min.js"></script>
-  <script src="./assets/artimuse/js/bulma-carousel.min.js"></script>
-  <script src="./assets/artimuse/js/bulma-slider.min.js"></script>
-  <script src="./assets/artimuse/js/index.js"></script>
+  <script defer src="./assets/ruler_bench/js/fontawesome.all.min.js"></script>
+  <script src="./assets/ruler_bench/js/bulma-carousel.min.js"></script>
+  <script src="./assets/ruler_bench/js/bulma-slider.min.js"></script>
+  <script src="./assets/ruler_bench/js/index.js"></script>
 </head>
 
 <body>
@@ -65,10 +65,11 @@
     <script>
       // 假设你有图片名为 1.jpg 到 12.jpg（可按需调整）
       const imageCount = 24;  // 假设目录下有12张图
-      const imagePath = 'assets/artimuse/images/artworks_demo/';
-      const rows = 3;  // 显示3行滚动图像
+      const imagePath = 'assets/ruler_bench/images/artworks_demo/';
+      const rows = 4;  // 显示3行滚动图像
       const imagesPerRow = Math.ceil(imageCount / rows);
       const background = document.getElementById('background-scroller');
+      const images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.jpg", "10.jpg", "11.png", "12.png", "13.jpg", "14.jpg", "15.png", "16.jpg", "17.png", "18.png", "19.png", "20.jpg", "21.jpg", "22.png", "23.jpg", "24.png"]
 
       for (let r = 0; r < rows; r++) {
         const row = document.createElement('div');
@@ -79,7 +80,8 @@
         for (let dup = 0; dup < 2; dup++) { // 重复两次
           for (let i = 0; i < imagesPerRow; i++) {
             const imgIndex = r * imagesPerRow + i;
-            const filename = `${(imgIndex % imageCount) + 1}.png`;
+            // const filename = `${(imgIndex % imageCount) + 1}.png`;
+            const filename = images[imgIndex % imageCount];
             const img = document.createElement('img');
             img.src = `${imagePath}${filename}`;
             img.className = 'scroll-img';
@@ -154,11 +156,18 @@
     <div class="hero-body" style="position: relative; z-index: 2;">
       <div class="container has-text-centered">
         <h1 class="title is-1 has-text-weight-bold" style="color: #f8f8f6; font-style: italic;">
-          <span style="color: #FF3E3E;">R</span><span style="color: #FF914D;">a</span><span
-            style="color: #FFC94D;">d</span><span style="color: #B6E24D;">a</span><span
-            style="color: #4DDC95;">r</span><span style="color: #4DB8FF;">Q</span><span
-            style="color: #8564FF;">A</span>:
-            Multi-modal Quality Analysis of Weather Radar Forecasts
+          <span style="color: #8a2be2;">R</span>
+          <span style="color: #9b30ff;">U</span>
+          <span style="color: #a64ca6;">L</span>
+          <span style="color: #b266ff;">E</span>
+          <span style="color: #b980e6;">R</span>
+          <span style="color: #c299ff;">-</span>
+          <span style="color: #cc66cc;">B</span>
+          <span style="color: #d080ff;">e</span>
+          <span style="color: #d699ff;">n</span>
+          <span style="color: #e0a3ff;">c</span>
+          <span style="color: #e6b3ff;">h</span>:
+          Probing Rule-based Reasoning Abilities of Next-level Video Generation Models for Vision Foundation Intelligence
         </h1>
 
 <!--        &lt;!&ndash; 中文副标题 &ndash;&gt;-->
@@ -201,28 +210,34 @@
         <!-- Author list -->
         <div class="is-size-5 publication-authors">
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=zLhiq2UAAAAJ&hl=zh-CN&oi=ao" target="_blank">Xuming He</a><sup>1,2*</sup>
+            <a>Xuming He</a><sup>1*</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=Gwo9O8sAAAAJ&hl=zh-CN&oi=ao" target="_blank">Zhiyuan You</a><sup>3*</sup>
+            <a>Zehao Fan</a><sup>1*</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=ifu71fEAAAAJ&hl=zh-CN&oi=ao" target="_blank">Junchao Gong</a><sup>1</sup>
+            <a>Hengjia Li</a><sup>1*&#8225;</sup>
           </span>
           <span class="author-block">
-            <a href="" target="_blank">Couhua Liu</a><sup>4</sup>
+            <a>Fan Zhuo</a><sup>1</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=9Fc5FY0AAAAJ&hl=zh-CN&oi=ao" target="_blank">Xiaoyu Yue</a><sup>1</sup>
+            <a>Hankun Xu</a><sup>1</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=vHZk2fMAAAAJ&hl=zh-CN&oi=ao" target="_blank">Peiqin Zhuang</a><sup>1</sup>
+            <a>Senlin Cheng</a><sup>2</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=UnMImiUAAAAJ&hl=zh-CN&oi=ao" target="_blank">Wenlong Zhang</a><sup>1&#8224;</sup>
+            <a>Di Weng</a><sup>1</sup>
           </span>
           <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=sakOO04AAAAJ&hl=zh-CN&oi=ao" target="_blank">Lei Bai</a><sup>1&#8224;</sup>
+            <a>Haifeng Liu</a><sup>1</sup>
+          </span>
+          <span class="author-block">
+            <a>Can Ye</a><sup>2</sup>
+          </span>
+          <span class="author-block">
+            <a>Boxi Wu</a><sup>1&#8224;</sup>
           </span>
         </div>
 
@@ -230,15 +245,14 @@
         <div class="is-size-5 publication-authors">
           <span class="author-block"><sup>*</sup> Equal contribution</span>
           <span class="author-block"><sup>&#8224;</sup> Corresponding author</span>
+          <span class="author-block"><sup>&#8225;</sup> Project Lead</span>
         </div>
 
         <!-- Affiliations -->
         <div class="is-size-5 publication-authors">
           <span class="author-block">
-            <sup>1</sup> Shanghai Artificial Intelligence Laboratory&nbsp;&nbsp;
-            <sup>2</sup> Zhejiang University&nbsp;&nbsp;
-            <sup>3</sup> The Chinese University of Hong Kong&nbsp;&nbsp;<br>
-            <sup>4</sup> Center for Earth System Modeling and Prediction of China Meteorological Administration&nbsp;&nbsp;<br>
+            <sup>1</sup> Zhejiang University&nbsp;&nbsp;
+            <sup>2</sup> Ant Group&nbsp;&nbsp;<br>
           </span>
         </div>
 
@@ -265,21 +279,12 @@
             </a>
           </span>
 <!--          &lt;!&ndash; ModelScope Demo Link. &ndash;&gt;-->
-          <span class="link-block">
-            <a href="https://huggingface.co/hexmSeeU/RadarQA-7B" target="_blank"
-             class="external-link button is-normal is-rounded has-background-white has-text-black">
-              <span class="icon">
-               <img src="assets/artimuse/hf-logo.svg" style="display:block;width:330px;height:240px" />
-             </span>
-              <span>Checkpoints</span>
-            </a>
-          </span>
           <!-- &lt;!&ndash; Huggingface Demo Link. &ndash;&gt; -->
          <span class="link-block">
-            <a href="https://huggingface.co/datasets/hexmSeeU/RQA-70K" target="_blank"
+            <a href="https://huggingface.co/datasets/hexmSeeU/RULER-Bench" target="_blank"
               class="external-link button is-normal is-rounded has-background-white has-text-black">
               <span class="icon">
-                <img src="assets/artimuse/hf-logo.svg" style="display:block;width:330px;height:240px" />
+                <img src="assets/ruler_bench/hf-logo.svg" style="display:block;width:330px;height:240px" />
              </span>
               <span>Dataset</span>
             </a>
@@ -307,8 +312,8 @@
               <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
                 <span style="font-size: 1.4rem; margin-right: 0.75rem; color: #2563eb;">🚀</span>
                 <div>
-                  <p style="margin-bottom: 0.3rem; font-weight: 600; color: #1a202c;">Sep 18, 2025</p>
-                  <p style="margin: 0;"><strong>Accepted by NIPS 2025</strong> 🎉</p>
+                  <p style="margin-bottom: 0.3rem; font-weight: 600; color: #1a202c;">Nov 22, 2025</p>
+                  <p style="margin: 0;">The <strong>Paper</strong> and <strong>Project Page</strong> are released 🎉</p>
                 </div>
               </li>
   
@@ -337,7 +342,7 @@
   
 <!--      &lt;!&ndash; Demo入口按钮 &ndash;&gt;-->
 <!--      <div class="has-text-centered" style="margin-bottom: 2rem;">-->
-<!--        <a href="http://artimuse.intern-ai.org.cn/" target="_blank" class="button is-primary is-medium"-->
+<!--        <a href="http://ruler_bench.intern-ai.org.cn/" target="_blank" class="button is-primary is-medium"-->
 <!--           style="background-color: #3b82f6; border: none;">-->
 <!--          👉 Try the Online Demo Now-->
 <!--        </a>-->
@@ -346,7 +351,7 @@
 <!--      &lt;!&ndash; 单张大图展示 &ndash;&gt;-->
 <!--      <div class="has-text-centered">-->
 <!--        <figure class="image is-inline-block" style="max-width: 90%; margin-bottom: 1rem;">-->
-<!--          <img src="assets/artimuse/online_demo/code.jpg" alt="Online Demo QR Code" style="border-radius: 1rem; max-width: 100%; height: auto;">-->
+<!--          <img src="assets/ruler_bench/online_demo/code.jpg" alt="Online Demo QR Code" style="border-radius: 1rem; max-width: 100%; height: auto;">-->
 <!--        </figure>-->
 <!--      </div>-->
 <!--    </div>-->
@@ -368,23 +373,18 @@
       <!-- 底部分割线 -->
       <div style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;">
       </div>
-      <!-- <h2 class="title is-3 has-text-centered" style="margin-bottom: 1rem;">Overview of ArtiMuse</h2> 新增标题 -->
+      <!-- <h2 class="title is-3 has-text-centered" style="margin-bottom: 1rem;">Overview of ruler_bench</h2> 新增标题 -->
       <div class="hero-body">
         <p style="margin-top: 0;">
-        With the advancement of meteorological instruments, increasingly abundant data has become available.
-        However, due to intrinsic limitations such as environmental sensitivity and orbital constraints, raw observations often contain temporal or spatial gaps, making it essential to employ data synthesis techniques to fill in missing information.
-        Existing approaches typically focus on single-variable or single-region tasks and primarily rely on deterministic modeling.
-        This limits unified synthesis across variables and regions, overlooks cross-variable complementarity, and often leads to over-smoothed results.
-
-        To address these challenges, we introduce <strong>SynWeather</strong>, the first dataset designed for
-        <strong>Unified Multi-region and Multi-variable Weather Observation Data Synthesis</strong>.
-        SynWeather covers four representative regions—the Continental United States, Europe, East Asia, and Tropical Cyclone areas—and provides high-resolution observations of key weather variables, including Composite Radar Reflectivity, Hourly Precipitation, Visible Light, and Microwave Brightness Temperature.
-
-        In addition, we present <strong>SynWeatherDiff</strong>, a general and probabilistic weather synthesis model built upon the Diffusion Transformer framework to mitigate the over-smoothing issue.
-        Experiments on the SynWeather dataset demonstrate that our model outperforms both task-specific and general baselines.
-
-        Moreover, SynWeatherDiff produces fine-grained and accurate estimates, especially in high-value weather regions.
-        Through this dataset and baseline model, we aim to advance downstream meteorological tasks and promote the development of general models for weather variable synthesis.
+        Recent advances in video generation have enabled the synthesis of videos with strong temporal consistency and impressive visual quality, marking a crucial step toward vision foundation models.
+        To evaluate these video generation models, existing benchmarks primarily focus on factors related to visual perception and understanding, like visual aesthetics, instruction adherence, and temporal coherence.
+        However, the <strong>rule-based reasoning</strong> capabilities of video generation models remain largely unexplored.
+        Although recent studies have carried out preliminary explorations into whether video models can serve as zero-shot learners, they still lack a fine-grained decomposition of reasoning capabilities and a comprehensive evaluation protocol.
+        To address this gap, we introduce <strong>RULER-Bench</strong> a benchmark designed to evaluate the reasoning ability of video generation models from the perspective of cognitive rules.
+        Built upon two fundamental paradigms: text-to-video and image-to-video, RULER-Bench covers 40 representative tasks spanning six rule categories with 622 high-quality annotated instances.
+        For the evaluation of each generated video, we construct a checklist covering four metrics and leverage GPT-o3 to assign scores to each question, achieving 85% alignment with human judgements.
+        Extensive experiments show that the state-of-the-art model achieves only 48.87% on the rule coherence metric, highlighting significant room for improvement in the reasoning capability of next-level video models.
+        We expect that the insight obtained from RULER-Bench will facilitate further development of reasoning-aware video generation, advancing video generation models toward vision foundation intelligence.
         </p>
       </div>
     </div>
@@ -402,16 +402,24 @@
           -webkit-text-fill-color: transparent;
           font-weight: 700;
         ">
-        Overview of datasets and pipelines in weather variable synthesis
+        Overview of RULER-Bench
       </h2>
       <!-- 底部分割线 -->
       <div style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;">
       </div>
-      <!-- <h2 class="title is-3 has-text-centered" style="margin-bottom: 1rem;">Overview of ArtiMuse</h2> 新增标题 -->
+      <!-- <h2 class="title is-3 has-text-centered" style="margin-bottom: 1rem;">Overview of ruler_bench</h2> 新增标题 -->
       <div class="hero-body">
-        <img src="assets/artimuse/images/paper/Teaser.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
+        <img src="assets/ruler_bench/images/paper/teaser.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
         <p style="margin-top: 0;">
-          <b>Overview of datasets and pipelines in weather variable synthesis</b>. Compared to existing single-region, single-variable and deterministic modeling, SynWeather enables general multi-region, multi-variable probabilistic modeling.
+          <b>Overview of RULER-Bench</b>. 
+          We propose RULER-Bench, a comprehensive benchmark designed to evaluate the rule-based reasoning abilities of video generation models.
+          <b><i>Left:</i></b> Grounded in three fundamental domains, we formulate rule-based reasoning ability into six categories: <i>Science</i>, <i>Vision</i>, <i>Hypothesis Game</i>, <i>Semantics</i>, and <i>Humanity</i>.
+          These categories are further subdivided into 40 tasks.
+          <b><i>Center:</i></b> Using the collected samples, we evaluate 10 video models based on the corresponding checklist across four metrics. 
+          Each checklist question is scored by GPT-o3 with discrete labels.
+          To validate the reliability of the evaluator, we conduct a human alignment study, in which GPT-o3 achieves 85\% agreement with human judgments.
+          <b><i>Right:</i></b> Extensive experiments demonstrate that Veo3.1 achieves the best performance.
+          However, all models exhibit limited reasoning ability across different rule categories.
         </p>
       </div>
     </div>
@@ -430,7 +438,7 @@
           -webkit-text-fill-color: transparent;
           font-weight: 700;
         ">
-            Overview of SynWeather
+            Dataset Construction and Validation
           </h2>
           <!-- 底部分割线 -->
           <div
@@ -438,703 +446,16 @@
           </div>
           <!-- <h2 class="title is-3 is-centered"> Comparison with Existing Models </h2> -->
         </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <p class="is-italic has-text-black" style="margin-bottom: 5px; font-size: 1rem;">
-            </p>
-            <div class="publication-img">
-              <img src="assets/artimuse/images/paper/SynWeather.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
-              <p style="margin-top: 0;">
-                <b>Overview of SynWeather. </b>SynWeather is a comprehensive dataset that covers four distinct regions and four key weather observation variables, integrating data from six satellite sources as a condition to support seven synthesis tasks. Extensive evaluations are conducted on seven models, comprising both task-specific and general synthesis models.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- 需要先引入 Bulma 样式 -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-
-        <style>
-          /* 容器和表格基础样式 */
-          .table-container {
-            background: #ffffff;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(100, 150, 255, 0.1);
-          }
-
-          table.table {
-            background-color: #ffffff;
-            border-radius: 0;
-            box-shadow: none;
-            border-collapse: separate;
-            /* 为了单独控制边框 */
-            border-spacing: 0 0;
-            /* 去除间距 */
-          }
-
-          /* 表头浅蓝色背景和字色 */
-          table.table thead tr:first-child th {
-            background: #d0e7ff;
-            color: #1a237e;
-            font-weight: 700;
-            font-size: 1.05rem;
-            border-bottom: 2px solid #90caf9;
-            border-left: none !important;
-            border-right: none !important;
-          }
-
-          table.table thead tr:nth-child(2) th {
-            background-color: #e6f0ff;
-            color: #3949ab;
-            font-weight: 600;
-            border-bottom: 1px solid #bbdefb;
-            border-left: none !important;
-            border-right: none !important;
-          }
-
-          /* 单元格居中，深灰字体，白底，无竖线 */
-          .table-container table.table td,
-          .table-container table.table th {
-            text-align: center !important;
-            vertical-align: middle !important;
-            color: #2c3e50;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.85rem;
-            background-color: #ffffff !important;
-            /* 统一白底 */
-            border-left: none !important;
-            /* 去除左边框 */
-            border-right: none !important;
-            /* 去除右边框 */
-            border-top: 1px solid #bbdefb !important;
-            /* 保留横线：上边框 */
-            border-bottom: 1px solid #bbdefb !important;
-            /* 保留横线：下边框 */
-          }
-
-          /* 第一行（thead）上边框加粗（避免两条线重叠） */
-          table.table thead tr:first-child th {
-            border-top: 3px solid #90caf9 !important;
-          }
-
-          /* 分组标题白底深蓝字，去掉背景浅蓝 */
-          tbody tr th.has-background-light {
-            background: #ffffff !important;
-            color: #1a237e;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            border: none !important;
-          }
-
-          /* 行悬浮白底不变，字体加深 */
-          tbody tr:hover:not(.highlight-row) {
-            background-color: #ffffff !important;
-            color: #0d47a1 !important;
-            cursor: default;
-            transition: color 0.3s ease;
-          }
-
-          /* 突出最后一行（我们的模型），始终生效 */
-          tbody tr.highlight-row {
-            background-color: #bbdefb !important;
-            color: #0d47a1 !important;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 0 12px 4px rgba(33, 150, 243, 0.7);
-            transform: scale(1.02);
-            transition: none;
-            /* 取消过渡动画 */
-          }
-        </style>
-
-        <p class="is-italic has-text-black" style="margin-bottom: 5px; font-size: 1rem;">
-            <b>SynWeather Dataset Details</b>
-        </p>
-        <p class="is-italic has-text-black has-text-centered" style="margin-bottom: 5px; font-size: 1rem;">
-        <div class="table-container">
-          <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-7">
-            <thead>
-              <tr>
-                <th rowspan="2">Region</th>
-                <th colspan="3">Input</th>
-                <th colspan="3">Target</th>
-                <th rowspan="2">Sample<br>Numbers</th>
-                <th rowspan="2">Year</th>
-              </tr>
-              <tr>
-                <th>Satellite</th>
-                <th>Band</th>
-                <th>Spatial Res. (km)</th>
-                <th>Variable</th>
-                <th>Source</th>
-                <th>Spatial Res. (km)</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <!-- CONUS -->
-              <tr>
-                <th rowspan="2" class="has-background-light">CONUS</th>
-                <td rowspan="2">GOES-16</td>
-                <td rowspan="2">C07–16</td>
-                <td rowspan="2">2</td>
-
-                <td>CR</td>
-                <td>GREMLIN CONUS3 Dataset</td>
-                <td>3</td>
-                <td>142k</td>
-                <td rowspan="2">2020–2022</td>
-              </tr>
-              <tr>
-                <td>Precipitation</td>
-                <td>MRMS</td>
-                <td>1</td>
-                <td>20k</td>
-              </tr>
-
-              <!-- Europe -->
-              <tr>
-                <th rowspan="2" class="has-background-light">Europe</th>
-                <td rowspan="2">Meteosat-11</td>
-                <td rowspan="2">IR_016–134<br>WV_062–073</td>
-                <td rowspan="2">3</td>
-
-                <td>Visible light</td>
-                <td>Meteosat-11</td>
-                <td>3</td>
-                <td>372k</td>
-                <td rowspan="2">2019–2021</td>
-              </tr>
-              <tr>
-                <td>Precipitation</td>
-                <td>EURADCLIM</td>
-                <td>1</td>
-                <td>25k</td>
-              </tr>
-
-              <!-- East Asia -->
-              <tr>
-                <th rowspan="2" class="has-background-light">East Asia</th>
-                <td rowspan="2">Himawari-8</td>
-                <td rowspan="2">C07–16</td>
-                <td rowspan="2">2</td>
-
-                <td>Visible light</td>
-                <td>Himawari-8</td>
-                <td>2</td>
-                <td>503k</td>
-                <td>2019–2021</td>
-              </tr>
-              <tr>
-                <td>Precipitation</td>
-                <td>GPM</td>
-                <td>10</td>
-                <td>15k</td>
-                <td>2021.7</td>
-              </tr>
-
-              <!-- TC Region -->
-              <tr>
-                <th rowspan="2" class="has-background-light">TC Region</th>
-                <td>GOES-16/17/18</td>
-                <td>C07–16</td>
-                <td rowspan="2">2</td>
-
-                <td rowspan="2">MWBT</td>
-                <td rowspan="2">AMSR-2 / GMI</td>
-                <td rowspan="2">7×12, 3×5<br>8.6×14, 4.4×7.2</td>
-                <td rowspan="2">9k</td>
-                <td rowspan="2">2015–2023</td>
-              </tr>
-              <tr>
-                <td>Himawari-8/9</td>
-                <td>C07–16</td>
-              </tr>
-
-            </tbody>
-          </table>
+        <div class="hero-body">
+          <img src="assets/ruler_bench/images/paper/data_construction.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
+          <p style="margin-top: 0;">
+            <b>Overview of dataset construction and validation </b>. First, we formulate our tasks based on the six rule categories. Second, we design task-specific data construction pipelines for T2V and I2V tasks.
+            Third, we leverage MLLM to construct checklist questions across four evaluation metrics. Finally, we conduct quality control and data refinement for the constructed dataset and checklists.
+          </p>
         </div>
       </div>
     </div>
   </section>
-
-<!--  &lt;!&ndash; Results &ndash;&gt;-->
-<!--  &lt;!&ndash; ① 引入 Bulma 与可选的图标字体 &ndash;&gt;-->
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />-->
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />-->
-
-<!--  <section class="hero teaser">-->
-<!--    <div class="container is-max-desktop">-->
-<!--      <div class="section-title">-->
-<!--        <h2 class="title is-3 has-text-centered" style="-->
-<!--      margin-bottom: 0.5rem;-->
-<!--      background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);-->
-<!--      -webkit-background-clip: text;-->
-<!--      -webkit-text-fill-color: transparent;-->
-<!--      font-weight: 700;-->
-<!--    ">-->
-<!--          Results on Real‑world Images-->
-<!--        </h2>-->
-<!--        &lt;!&ndash; 底部分割线 &ndash;&gt;-->
-<!--        <div-->
-<!--          style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="columns is-vcentered">-->
-<!--        &lt;!&ndash; ===== 左侧：图像容器 ===== &ndash;&gt;-->
-<!--        <div class="column is-half"-->
-<!--          style="display: flex; flex-direction: column; justify-content: center; height: 100%; align-items: center;">-->
-<!--          &lt;!&ndash; 外层容器添加 align-items: center 确保水平居中 &ndash;&gt;-->
-<!--          <div style="display: flex; flex-direction: column; align-items: center; width: 550px;">-->
-<!--            &lt;!&ndash; 图像容器 &ndash;&gt;-->
-<!--            <div class="image-container" style="-->
-<!--              position: relative;-->
-<!--              width:480px;-->
-<!--              height: 360px;-->
-<!--              margin: 0 auto;-->
-<!--              overflow: hidden;-->
-<!--              border-radius: 8px;-->
-<!--              background: #f5f5f5;-->
-<!--              display: flex;-->
-<!--              align-items: center;-->
-<!--              justify-content: center;-->
-<!--              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);-->
-<!--            ">-->
-<!--              <img id="main-img" src="img1.jpg" style="width: 100%; height: 100%; object-fit: cover;" />-->
-<!--              &lt;!&ndash; 导航按钮 &ndash;&gt;-->
-<!--              <button id="prev" class="button is-small is-light"-->
-<!--                style="position:absolute;left:12px;top:50%;transform:translateY(-50%);">-->
-<!--                <span class="icon"><i class="fas fa-chevron-left"></i></span>-->
-<!--              </button>-->
-<!--              <button id="next" class="button is-small is-light"-->
-<!--                style="position:absolute;right:12px;top:50%;transform:translateY(-50%);">-->
-<!--                <span class="icon"><i class="fas fa-chevron-right"></i></span>-->
-<!--              </button>-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash; 评分框 (与图像同宽且对齐) &ndash;&gt;-->
-<!--            <div style="-->
-<!--              width: 480px;-->
-<!--              margin-top: 1rem;-->
-<!--              padding: 0.8rem 1.5rem;-->
-<!--              background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);-->
-<!--              border-radius: 8px;-->
-<!--              border-left: 4px solid #38bdf8;-->
-<!--              box-shadow: 0 2px 8px rgba(0,0,0,0.05);-->
-<!--              text-align: center;-->
-<!--            ">-->
-<!--              <div style="-->
-<!--                font-size: 0.9rem;-->
-<!--                color: #0369a1;-->
-<!--                font-weight: 600;-->
-<!--                letter-spacing: 0.5px;-->
-<!--                margin-bottom: 0.2rem;-->
-<!--              ">-->
-<!--                Aesthetics Score-->
-<!--              </div>-->
-<!--              <div style="-->
-<!--                font-size: 1.25rem;-->
-<!--                font-weight: 700;-->
-<!--                color: #0c4a6e;-->
-<!--              ">-->
-<!--                <span id="score" style="color: #0284c7;">87</span>-->
-<!--                <span style="font-weight: 400; color: #64748b;"> / 100</span>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; ===== 右侧：按钮 ===== &ndash;&gt;-->
-<!--        <div class="column is-half" style="height: 100%;">-->
-<!--          <div id="tab-buttons" class="buttons is-multiline"-->
-<!--            style="height: 100%; display: flex; flex-direction: column; justify-content: center; margin-left: 10;">-->
-<!--            <div style="display: flex; flex-direction: column; gap: 0rem;">-->
-<!--              &lt;!&ndash; 统一白色文字 + 文字阴影提升可读性 &ndash;&gt;-->
-<!--              <button class="button is-selected" data-panel="composition"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Composition &amp;-->
-<!--                Design</button>-->
-<!--              <button class="button" data-panel="visual"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Visual Elements-->
-<!--                &amp; Structure</button>-->
-<!--              <button class="button" data-panel="technical"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Technical-->
-<!--                Execution</button>-->
-<!--              <button class="button" data-panel="originality"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Originality &amp;-->
-<!--                Creativity</button>-->
-<!--              <button class="button" data-panel="theme"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Theme &amp;-->
-<!--                Communication</button>-->
-<!--              <button class="button" data-panel="emotion"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Emotion &amp;-->
-<!--                Viewer Response</button>-->
-<!--              <button class="button" data-panel="gestalt"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Overall-->
-<!--                Gestalt</button>-->
-<!--              <button class="button" data-panel="overall"-->
-<!--                style="width: 145%; color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.5)">Comprehensive-->
-<!--                Evaluation</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; ===== 文本框部分 ===== &ndash;&gt;-->
-<!--      <div id="panels" style="margin-top: 1.5rem; height: 250px;"> &lt;!&ndash; 增加高度 &ndash;&gt;-->
-<!--        <div id="composition" class="panel-content is-active"></div>-->
-<!--        <div id="visual" class="panel-content"></div>-->
-<!--        <div id="technical" class="panel-content"></div>-->
-<!--        <div id="originality" class="panel-content"></div>-->
-<!--        <div id="theme" class="panel-content"></div>-->
-<!--        <div id="emotion" class="panel-content"></div>-->
-<!--        <div id="gestalt" class="panel-content"></div>-->
-<!--        <div id="overall" class="panel-content"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; ===== 交互脚本 ===== &ndash;&gt;-->
-<!--    <script>-->
-<!--      /* 图片、分数、JSON 路径 */-->
-<!--      const images = [-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250606_205014582209.jpg',-->
-<!--          score: 86, json: 'assets/artimuse/images/results/analysis/img_20250606_205014582209.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250609_102200391755.jpg',-->
-<!--          score: 46, json: 'assets/artimuse/images/results/analysis/img_20250609_102200391755.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250604_222126032553.jpg',-->
-<!--          score: 33, json: 'assets/artimuse/images/results/analysis/img_20250604_222126032553.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/zdq_1.jpg',-->
-<!--          score: 87, json: 'assets/artimuse/images/results/analysis/zdq_1.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250609_141559880336.jpg',-->
-<!--          score: 96, json: 'assets/artimuse/images/results/analysis/img_20250609_141559880336.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250530_205539491476.jpg',-->
-<!--          score: 69, json: 'assets/artimuse/images/results/analysis/img_20250530_205539491476.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/0_420.jpg',-->
-<!--          score: 54, json: 'assets/artimuse/images/results/analysis/0_420.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/8_23.jpg',-->
-<!--          score: 65, json: 'assets/artimuse/images/results/analysis/8_23.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250530_193518371464.jpg',-->
-<!--          score: 70, json: 'assets/artimuse/images/results/analysis/img_20250530_193518371464.json'-->
-<!--        },-->
-<!--        {-->
-<!--          src: 'assets/artimuse/images/results/images/img_20250611_130831439697.jpg',-->
-<!--          score: 71, json: 'assets/artimuse/images/results/analysis/img_20250611_130831439697.json'-->
-<!--        }-->
-<!--      ];-->
-
-<!--      const imgEl = document.getElementById('main-img');-->
-<!--      const scoreEl = document.getElementById('score');-->
-<!--      const panels = document.querySelectorAll('.panel-content');-->
-<!--      const buttons = document.querySelectorAll('#tab-buttons .button');-->
-
-<!--      let current = 0;-->
-<!--      const metaCache = new Map();-->
-
-<!--      /* -&#45;&#45; 面板 id ↔ JSON 键 的映射 -&#45;&#45; */-->
-<!--      const PANEL_MAP = {-->
-<!--        composition: 'Composition & Design',-->
-<!--        visual: 'Visual Elements & Structure',-->
-<!--        technical: 'Technical Execution',-->
-<!--        originality: 'Originality & Creativity',-->
-<!--        theme: 'Theme & Communication',-->
-<!--        emotion: 'Emotion & Viewer Response',-->
-<!--        gestalt: 'Overall Gestalt',-->
-<!--        overall: 'Comprehensive Evaluation'-->
-<!--      };-->
-
-<!--      async function show(index) {-->
-<!--        const { src, score, json } = images[index];-->
-<!--        imgEl.src = src;-->
-<!--        scoreEl.textContent = score;-->
-
-<!--        /* 载入 / 缓存 JSON */-->
-<!--        let meta = metaCache.get(json);-->
-<!--        if (!meta) {-->
-<!--          try {-->
-<!--            const res = await fetch(json);-->
-<!--            meta = res.ok ? await res.json() : {};-->
-<!--            metaCache.set(json, meta);-->
-<!--          } catch (e) { meta = {}; }-->
-<!--        }-->
-
-<!--        /* 用 PANEL_MAP 把 id 转回 JSON 键名 */-->
-<!--        panels.forEach(p => {-->
-<!--          const key = PANEL_MAP[p.id] || p.id;-->
-<!--          const txt = meta[key]?.response ?? 'No description.';-->
-<!--          p.dataset.content = txt;-->
-<!--        });-->
-
-<!--        /* 把当前激活面板的文字马上写出来 */-->
-<!--        const active = document.querySelector('.panel-content.is-active');-->
-<!--        if (active) active.textContent = active.dataset.content;-->
-<!--      }-->
-
-<!--      /* 左右切换图片 */-->
-<!--      document.getElementById('prev').onclick = () => {-->
-<!--        current = (current - 1 + images.length) % images.length;-->
-<!--        show(current);-->
-<!--      };-->
-<!--      document.getElementById('next').onclick = () => {-->
-<!--        current = (current + 1) % images.length;-->
-<!--        show(current);-->
-<!--      };-->
-<!--      document.addEventListener('keydown', e => {-->
-<!--        if (e.key === 'ArrowLeft') document.getElementById('prev').click();-->
-<!--        if (e.key === 'ArrowRight') document.getElementById('next').click();-->
-<!--      });-->
-
-<!--      /* 点击按钮切换面板并显示文字 */-->
-<!--      buttons.forEach(btn => {-->
-<!--        btn.addEventListener('click', () => {-->
-<!--          buttons.forEach(b => b.classList.remove('is-selected'));-->
-<!--          btn.classList.add('is-selected');-->
-
-<!--          const target = btn.dataset.panel;-->
-<!--          panels.forEach(p => {-->
-<!--            const active = p.id === target;-->
-<!--            p.classList.toggle('is-active', active);-->
-<!--            if (active) p.textContent = p.dataset.content;-->
-<!--          });-->
-<!--        });-->
-<!--      });-->
-
-<!--      /* 初始化 */-->
-<!--      show(current);-->
-<!--    </script>-->
-
-<!--    &lt;!&ndash; ===== 样式补充 ===== &ndash;&gt;-->
-<!--    <style>-->
-<!--      /* 按钮样式 */-->
-<!--      #tab-buttons {-->
-<!--        display: flex;-->
-<!--        flex-direction: column;-->
-<!--        gap: 0.5rem;-->
-<!--      }-->
-
-<!--      #tab-buttons .button {-->
-<!--        text-align: center;-->
-<!--        justify-content: center;-->
-<!--        white-space: normal;-->
-<!--        height: auto;-->
-<!--        padding: 0.75rem;-->
-<!--        font-weight: 500;-->
-<!--        transition: all 0.2s ease;-->
-<!--        width: 100%;-->
-<!--        flex: none;-->
-<!--        border: none;-->
-<!--        color: white;-->
-<!--        font-weight: bold;-->
-<!--        opacity: 0.9;-->
-<!--      }-->
-
-<!--      /* 浅色彩虹配色按钮 */-->
-<!--      #tab-buttons .button:nth-child(1) {-->
-<!--        background-color: rgba(255, 62, 62, 0.7);-->
-<!--        /* 浅红 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(2) {-->
-<!--        background-color: rgba(255, 145, 77, 0.7);-->
-<!--        /* 浅橙 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(3) {-->
-<!--        background-color: rgba(255, 201, 77, 0.7);-->
-<!--        /* 浅黄 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(4) {-->
-<!--        background-color: rgba(182, 226, 77, 0.7);-->
-<!--        /* 浅绿 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(5) {-->
-<!--        background-color: rgba(77, 220, 149, 0.7);-->
-<!--        /* 浅青 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(6) {-->
-<!--        background-color: rgba(77, 184, 255, 0.7);-->
-<!--        /* 浅蓝 */-->
-<!--      }-->
-
-<!--      /* 最后两个按钮单独处理 */-->
-<!--      #tab-buttons .button:nth-child(7),-->
-<!--      #tab-buttons .button:nth-child(8) {-->
-<!--        width: 100%;-->
-<!--        /* 确保各占一行 */-->
-<!--        display: block;-->
-<!--        margin-top: 0.5rem;-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(7) {-->
-<!--        background-color: rgba(133, 100, 255, 0.7);-->
-<!--        /* 浅靛 */-->
-<!--      }-->
-
-<!--      #tab-buttons .button:nth-child(8) {-->
-<!--        background-color: rgba(199, 77, 255, 0.7);-->
-<!--        /* 浅紫 */-->
-<!--      }-->
-
-<!--      /* 悬停效果 */-->
-<!--      #tab-buttons .button:hover {-->
-<!--        opacity: 1;-->
-<!--        transform: translateY(-2px);-->
-<!--        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);-->
-<!--      }-->
-
-<!--      /* 激活按钮高亮 */-->
-<!--      .button.is-selected {-->
-<!--        opacity: 1;-->
-<!--        transform: translateY(-2px);-->
-<!--        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);-->
-<!--        border-left: 4px solid white;-->
-<!--      }-->
-
-<!--      /* 文本面板样式 */-->
-<!--      .panel-content {-->
-<!--        display: none;-->
-<!--        height: 100%;-->
-<!--        background-color: #ffffff;-->
-<!--        padding: 1.25rem;-->
-<!--        border-radius: 10px;-->
-<!--        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);-->
-<!--        color: #333;-->
-<!--        font-size: 1rem;-->
-<!--        line-height: 1.7;-->
-<!--        overflow-y: auto;-->
-<!--      }-->
-
-<!--      .panel-content.is-active {-->
-<!--        display: block;-->
-<!--      }-->
-
-<!--      /* 列布局 */-->
-<!--      .columns.is-vcentered {-->
-<!--        align-items: center;-->
-<!--        min-height: 420px;-->
-<!--      }-->
-
-<!--      /* 响应式调整 */-->
-<!--      @media screen and (max-width: 768px) {-->
-<!--        .columns {-->
-<!--          flex-direction: column;-->
-<!--        }-->
-
-<!--        .column.is-half {-->
-<!--          width: 100%;-->
-<!--        }-->
-
-<!--        .image-container {-->
-<!--          width: 100%;-->
-<!--          height: 300px;-->
-<!--        }-->
-
-<!--        #panels {-->
-<!--          height: 180px;-->
-<!--        }-->
-<!--      }-->
-<!--    </style>-->
-<!--  </section>-->
-
-
-  <!-- Model -->
-  <section class="hero teaser" style="margin-top: 3rem;"> <!-- 添加顶部间距 -->
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="section-title">
-          <h2 class="title is-3 has-text-centered" style="
-background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-weight: 700;
-margin-bottom: 0.5rem;
-">
-            SynWeatherDiff
-          </h2>
-          <!-- 底部分割线 -->
-          <div
-            style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;">
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <div class="publication-img">
-              <img id="architecture" src="assets/artimuse/images/paper/workflow.png"
-                style="width:800px; margin-top:10px;margin-bottom:10px;" />
-            </div>
-          </div>
-        </div>
-        <p style="margin-top: 0;">
-          <b>An overview of our SynWeatherDiff.</b> The target variables are projected into a unified latent space using a general autoencoder. The satellite inputs are processed through a ViT-based encoder to extract features. A task-specific text prompt is encoded using a fine-tuned CLIP text encoder. The text tokens serve as conditional information to guide Text-Guided DiT for different weather synthesis tasks.
-          granularity.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-<!--  &lt;!&ndash; Pipeline of ArtiMuse &ndash;&gt;-->
-<!--  &lt;!&ndash; Data Curation and Model Training &ndash;&gt;-->
-<!--  <section class="hero teaser">-->
-<!--    <div class="container is-max-desktop">-->
-<!--      <div class="hero-body">-->
-<!--        <div class="section-title">-->
-<!--          <h2 class="title is-3 has-text-centered" style="-->
-<!--          margin-bottom: 0.5rem;-->
-<!--          background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);-->
-<!--          -webkit-background-clip: text;-->
-<!--          -webkit-text-fill-color: transparent;-->
-<!--          font-weight: 700;">-->
-<!--            Data Curation and Model Training-->
-<!--          </h2>-->
-<!--          &lt;!&ndash; 底部分割线 &ndash;&gt;-->
-<!--          <div-->
-<!--            style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;">-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="columns is-centered has-text-centered">-->
-<!--          <div class="column">-->
-<!--            <div class="publication-img">-->
-<!--              <img id="architecture" src="assets/artimuse/images/paper/pipieline_page-0001.jpg"-->
-<!--                style="width:800px; margin-top:10px;margin-bottom:10px;" />-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; 修改为左对齐 &ndash;&gt;-->
-<!--        <p style="margin-top: 0; text-align: left;">-->
-<!--          <b>Pipeline of ArtiMuse.</b> ArtiMuse encompasses a multi-stage pipeline spanning <b>data collection &-->
-<!--            processing,-->
-<!--            annotation generation, and model training,</b> systematically enhancing its text evaluation capabilities and-->
-<!--          score-->
-<!--          assessment proficiency across multiple dimensions.-->
-<!--        </p>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>-->
-
 
 
   <!-- Results -->
@@ -1157,18 +478,7 @@ margin-bottom: 0.5rem;
           </div>
           <!-- <h2 class="title is-3 is-centered"> Comparison with Existing Models </h2> -->
         </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <p class="is-italic has-text-black" style="margin-bottom: 5px; font-size: 1rem;">
-            </p>
-            <div class="publication-img">
-              <img src="assets/artimuse/images/paper/Main-result.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
-              <p style="margin-top: 0;">
-                Visual results of the weather synthesis standard tasks by our SynWeatherDiff and other models.
-              </p>
-            </div>
-          </div>
-        </div>
+        
         <!-- 需要先引入 Bulma 样式 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
@@ -1267,249 +577,437 @@ margin-bottom: 0.5rem;
           }
         </style>
         <p class="is-italic has-text-black has-text-centered" style="margin-bottom: 5px; font-size: 1rem;">
-          <b>CR Synthesis & Precipitation Synthesis Results</b>
+          <b>Evaluation result across different rule categories and metrics</b>
         </p>
 
         <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-7">
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-7">
+            <thead>
+              <tr>
+                <th rowspan="3">Rule Categories</th>
+                <th rowspan="3">Metric</th>
+                <th colspan="6">Closed-Source Models</th>
+                <th colspan="4">Open-Source Models</th>
+              </tr>
+              <tr>
+                <th>Veo3.1</th>
+                <th>Veo2</th>
+                <th>Sora2</th>
+                <th>Pixel Verse-V5</th>
+                <th>Wan 2.5</th>
+                <th>Seedance 1.0-pro</th>
+                <th>Hunyuan Video</th>
+                <th>CogVideoX 1.5 5B</th>
+                <th>Wan 2.2 A14B</th>
+                <th>Wan 2.1 14B</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <!-- Science Rule -->
+              <tr>
+                <td rowspan="5">Science Rule</td>
+                <td>IF</td>
+                <td><u>65.05</u></td><td>42.17</td><td><b>66.00</b></td><td>57.13</td><td>57.38</td><td>58.86</td>
+                <td>24.92</td><td>27.97</td><td><b>37.15</b></td><td><u>35.80</u></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td><u>83.18</u></td><td>73.3</td><td><b>88.01</b></td><td>80.76</td><td>80.48</td><td>80.99</td>
+                <td>48.46</td><td>48.84</td><td><b>68.52</b></td><td><u>65.74</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><b>91.37</b></td><td>82.33</td><td>89.49</td><td><u>89.74</u></td><td>85.35</td><td>87.69</td>
+                <td>71.29</td><td>70.96</td><td><u>80.37</u></td><td><b>81.93</b></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>50.97</b></td><td>22.16</td><td><u>47.09</u></td><td>41.41</td><td>33.64</td><td>31.96</td>
+                <td>12.64</td><td>13.70</td><td><b>17.16</b></td><td><u>15.90</u></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><u>72.64</u></td><td>54.99</td><td><b>72.65</b></td><td>67.26</td><td>64.21</td><td>64.87</td>
+                <td>39.33</td><td>40.37</td><td><b>50.80</b></td><td><u>49.84</u></td>
+              </tr>
+          
+              <!-- Game Rule -->
+              <tr>
+                <td rowspan="5">Game Rule</td>
+                <td>IF</td>
+                <td><b>39.75</b></td><td>24.25</td><td><u>39.19</u></td><td>30.10</td><td>26.59</td><td>24.26</td>
+                <td>14.75</td><td><b>22.75</b></td><td>16.29</td><td><u>19.30</u></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td>51.45</td><td>36.33</td><td><u>72.33</u></td><td>67.09</td><td><b>72.71</b></td><td>68.79</td>
+                <td>40.07</td><td><u>55.29</u></td><td><b>64.56</b></td><td>37.52</td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td>77.95</td><td>59.15</td><td><b>88.18</b></td><td>80.59</td><td><u>86.28</u></td><td>88.39</td>
+                <td>59.13</td><td>69.45</td><td><b>80.13</b></td><td><u>72.20</u></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><u>17.70</u></td><td>8.17</td><td><b>19.97</b></td><td>13.06</td><td>15.45</td><td>15.61</td>
+                <td>6.98</td><td>7.56</td><td><b>14.12</b></td><td><u>10.48</u></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td>46.71</td><td>31.98</td><td><b>54.92</b></td><td>47.71</td><td><u>50.26</u></td><td>49.26</td>
+                <td>30.23</td><td>38.76</td><td><b>43.77</b></td><td><u>34.88</u></td>
+              </tr>
 
-          <thead>
-            <tr>
-              <th rowspan="3">Task name</th>
-              <th colspan="4">CR Synthesis</th>
-              <th colspan="7">Precipitation Synthesis</th>
-            </tr>
+              <tr>
+                <td rowspan="5">Semantics Rule</td>
+                <td>IF</td>
+                <td><b>71.83</b></td><td>56.44</td><td><u>68.12</u></td><td>65.08</td><td>59.91</td><td>61.28</td>
+                <td>38.51</td><td>46.06</td><td><b>48.77</b></td><td><u>46.27</u></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td><b>92.65</b></td><td><u>91.18</u></td><td>90.85</td><td><u>91.18</u></td><td>87.33</td><td>87.67</td>
+                <td>80.39</td><td>75.82</td><td><b>82.35</b></td><td><u>80.72</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><b>91.62</b></td><td>82.50</td><td>83.43</td><td><u>89.02</u></td><td>82.19</td><td>84.55</td>
+                <td>79.17</td><td>70.69</td><td><u>82.70</u></td><td><b>83.09</b></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>67.57</b></td><td>44.13</td><td>53.69</td><td><u>56.80</u></td><td>49.95</td><td>49.42</td>
+                <td>32.01</td><td>37.34</td><td><u>37.73</u></td><td><b>38.40</b></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><b>80.92</b></td><td>68.56</td><td>74.02</td><td><u>75.52</u></td><td>69.84</td><td>70.73</td>
+                <td>57.52</td><td>57.48</td><td><b>62.89</b></td><td><u>62.12</u></td>
+              </tr>
 
-            <tr>
-              <th colspan="4">CONUS</th>
-              <th colspan="4">CONUS</th>
-              <th colspan="3">Europe</th>
-            </tr>
+              <tr>
+                <td rowspan="5">Hypothesis Rule</td>
+                <td>IF</td>
+                <td><b>86.97</b></td><td>58.55</td><td>72.44</td><td><u>80.13</u></td><td>71.93</td><td>64.32</td>
+                <td>44.44</td><td>41.45</td><td><u>61.11</u></td><td><b>61.75</b></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td><b>85.90</b></td><td>64.32</td><td>77.35</td><td><u>81.62</u></td><td>66.45</td><td>67.74</td>
+                <td>51.92</td><td>50.43</td><td><b>64.74</b></td><td><u>55.56</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><b>92.20</b></td><td>81.54</td><td>82.50</td><td><u>85.73</u></td><td>76.86</td><td>79.66</td>
+                <td>73.89</td><td>63.80</td><td><b>77.03</b></td><td><u>75.17</u></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>46.79</b></td><td>12.50</td><td>41.35</td><td><u>46.69</u></td><td>18.31</td><td>28.31</td>
+                <td>9.62</td><td>11.00</td><td><u>12.93</u></td><td><b>17.84</b></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><b>77.96</b></td><td>54.23</td><td>68.41</td><td><u>73.54</u></td><td>58.39</td><td>60.01</td>
+                <td>44.97</td><td>41.67</td><td><b>53.95</b></td><td><u>52.58</u></td>
+              </tr>
 
-            <tr>
-              <th>RMSE↓</th>
-              <th>CSI/25↑</th>
-              <th>CSI/35↑</th>
-              <th>CSI/40↑</th>
+              <tr>
+                <td rowspan="5">Humanity Rule</td>
+                <td>IF</td>
+                <td><u>79.90</u></td><td>53.46</td><td><b>80.04</b></td><td>72.87</td><td>63.28</td><td>68.93</td>
+                <td>46.56</td><td>42.32</td><td><u>49.76</u></td><td><b>52.28</b></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td><u>87.37</u></td><td>73.10</td><td><b>88.06</b></td><td>84.25</td><td>79.83</td><td>83.13</td>
+                <td>70.60</td><td>54.23</td><td><b>72.34</b></td><td><u>70.47</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><b>94.49</b></td><td>84.38</td><td>88.08</td><td><u>89.65</u></td><td>83.90</td><td>88.52</td>
+                <td>80.94</td><td>67.76</td><td><b>83.15</b></td><td><u>82.32</u></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>61.23</b></td><td>35.23</td><td><u>56.78</u></td><td>50.63</td><td>33.41</td><td>38.75</td>
+                <td>27.78</td><td>20.60</td><td><b>30.21</b></td><td><u>29.21</u></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><b>80.75</b></td><td>61.54</td><td><u>78.24</u></td><td>74.35</td><td>65.10</td><td>69.83</td>
+                <td>56.47</td><td>46.23</td><td><b>58.86</b></td><td><u>58.57</u></td>
+              </tr>
 
-              <th>RMSE↓</th>
-              <th>CSI/2↑</th>
-              <th>CSI/5↑</th>
-              <th>CSI/15↑</th>
+              <tr>
+                <td rowspan="4">Vision Rule</td>
+                <td>VC</td>
+                <td>59.53</td><td>46.19</td><td>57.77</td><td>56.14</td><td><b>70.04</b></td><td><u>61.86</u></td>
+                <td>43.49</td><td>24.79</td><td><b>59.03</b></td><td><u>51.26</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><u>72.67</u></td><td>57.63</td><td>57.77</td><td>71.61</td><td>68.32</td><td><b>76.06</b></td>
+                <td><u>52.94</u></td><td>29.41</td><td><b>65.55</b></td><td>49.58</td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>48.94</b></td><td>30.58</td><td>28.50</td><td>40.47</td><td><u>42.24</u></td><td>41.74</td>
+                <td>18.91</td><td>14.78</td><td><b>29.34</b></td><td><u>23.25</u></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><b>60.38</b></td><td>44.80</td><td>48.02</td><td>56.07</td><td><u>60.20</u></td><td>59.89</td>
+                <td>38.45</td><td>22.99</td><td><b>51.31</b></td><td><u>41.36</u></td>
+              </tr>
 
-              <th>RMSE↓</th>
-              <th>CSI/2↑</th>
-              <th>CSI/5↑</th>
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <tr>
-              <td>SRViT<sup>#</sup></td>
-              <td>3.561</td><td>0.277</td><td>0.120</td><td>0.069</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td>
-            </tr>
-
-            <tr>
-              <td>Deep-STEP<sup>#</sup></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td>
-              <td><b>0.916</b></td><td>0.262</td><td>0.111</td><td>0.007</td>
-              <td><u>0.415</u></td><td><u>0.083</u></td><td>0.016</td>
-            </tr>
-
-            <tr>
-              <td>TomoPE<sup>#</sup></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>0.986</td><td>0.247</td><td>0.149</td><td>0.036</td>
-              <td><b>0.413</b></td><td>0.060</td><td>0.009</td>
-            </tr>
-
-            <tr>
-              <td>UNet<sup>#</sup></td>
-              <td>3.395</td><td>0.299</td><td>0.069</td><td>0.023</td>
-              <td>0.976</td><td>0.231</td><td>0.166</td><td>0.059</td>
-              <td>0.641</td><td>0.035</td><td>0.016</td>
-            </tr>
-
-            <tr>
-              <td>ViT<sup>#</sup></td>
-              <td>3.487</td><td>0.309</td><td>0.141</td><td><u>0.089</u></td>
-              <td>0.981</td><td>0.250</td><td>0.157</td><td>0.038</td>
-              <td>0.497</td><td><u>0.083</u></td><td><u>0.044</u></td>
-            </tr>
-
-            <tr>
-              <td>WeatherGFM<sup>†</sup></td>
-              <td><u>3.124</u></td><td><u>0.366</u></td><td><b>0.166</b></td><td>0.086</td>
-              <td>1.049</td><td><u>0.288</u></td><td><u>0.198</u></td><td><u>0.090</u></td>
-              <td>0.714</td><td>0.018</td><td>0.013</td>
-            </tr>
-
-            <tr>
-              <td>SynWeatherDiff<sup>†</sup></td>
-              <td><b>2.820</b></td><td><b>0.382</b></td><td><u>0.158</u></td><td><b>0.101</b></td>
-              <td><u>0.976</u></td><td><b>0.312</b></td><td><b>0.223</b></td><td><b>0.113</b></td>
-              <td>0.569</td><td><b>0.084</b></td><td><b>0.079</b></td>
-            </tr>
-
-          </tbody>
-        </table>
+              <tr>
+                <td rowspan="5">Average</td>
+                <td>IF</td>
+                <td><b>68.70</b></td><td>46.97</td><td><u>65.16</u></td><td>61.06</td><td>55.82</td><td>55.53</td>
+                <td>33.84</td><td>36.11</td><td><u>42.62</u></td><td><b>43.08</b></td>
+              </tr>
+              <tr>
+                <td>VC</td>
+                <td>76.68</td><td>64.07</td><td><b>79.06</b></td><td><u>76.84</u></td><td>76.14</td><td>75.03</td>
+                <td>55.82</td><td>51.57</td><td><b>68.59</b></td><td><u>60.21</u></td>
+              </tr>
+              <tr>
+                <td>VF</td>
+                <td><b>86.72</b></td><td>74.59</td><td>81.58</td><td><u>84.39</u></td><td>80.48</td><td>84.14</td>
+                <td>69.56</td><td>62.01</td><td><b>77.69</b></td><td><u>75.92</u></td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td><b>48.87</b></td><td>25.46</td><td>41.23</td><td><u>41.51</u></td><td>32.17</td><td>34.30</td>
+                <td>17.99</td><td>17.50</td><td><b>23.58</b></td><td><u>22.51</u></td>
+              </tr>
+              <tr>
+                <td><b>Avg</b></td>
+                <td><b>70.24</b></td><td>52.77</td><td><u>66.76</u></td><td>65.95</td><td>61.15</td><td>62.25</td>
+                <td>44.30</td><td>41.80</td><td><b>53.24</b></td><td><u>49.96</u></td>
+              </tr>
+          
+              <!-- 其余规则同理，可按此格式继续转换 -->
+              
+              <!-- Win Rate -->
+              <tr>
+                <td colspan="2">Win Rate</td>
+                <td><b>0.397</b></td><td>0.186</td><td><u>0.340</u></td><td>0.300</td><td>0.257</td><td>0.267</td>
+                <td>0.151</td><td>0.151</td><td><b>0.193</b></td><td><u>0.162</u></td>
+              </tr>
+            </tbody>
+          </table>
+          
         </div>
-
-        <p class="is-italic has-text-black has-text-centered" style="margin-bottom: 5px; font-size: 1rem;">
-          <b>Visible Light & Microwave Brightness Temperature Synthesis Results</b>
-        </p>
-
-        <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-7">
-
-          <thead>
-            <tr>
-              <th rowspan="3">Task name</th>
-              <th colspan="6">Visible Light Synthesis</th>
-              <th colspan="5">MWBT Synthesis</th>
-            </tr>
-
-            <tr>
-              <th colspan="3">East Asia</th>
-              <th colspan="3">Europe</th>
-              <th colspan="5">Tropical Cyclone Region</th>
-            </tr>
-
-            <tr>
-              <th>SSIM↑</th><th>PSNR↑</th><th>CSI/50↑</th>
-              <th>SSIM↑</th><th>PSNR↑</th><th>CSI/50↑</th>
-
-              <th>RMSE↓</th><th>SSIM↑</th><th>PSNR↑</th><th>LPIPS↓</th><th>CSI/300↑</th>
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <tr>
-              <td>ViT<sup>#</sup></td>
-              <td><u>0.870</u></td><td><u>20.87</u></td><td>0.672</td>
-              <td>0.860</td><td><u>24.03</u></td><td>0.496</td>
-
-              <td><u>4.768</u></td><td>0.783</td><td>21.56</td><td>0.324</td><td><u>0.792</u></td>
-            </tr>
-
-            <tr>
-              <td>UNet<sup>#</sup></td>
-              <td><b>0.917</b></td><td><b>21.67</b></td><td><b>0.711</b></td>
-              <td><b>0.878</b></td><td><b>24.82</b></td><td><b>0.556</b></td>
-
-              <td>5.803</td><td>0.816</td><td>20.6</td><td><u>0.329</u></td><td>0.741</td>
-            </tr>
-
-            <tr>
-              <td>WeatherGFM<sup>†</sup></td>
-              <td>0.822</td><td>18.43</td><td>0.465</td>
-              <td>0.836</td><td>22.26</td><td>0.396</td>
-
-              <td>4.979</td><td><u>0.828</u></td><td><u>21.86</u></td><td>0.325</td><td>0.777</td>
-            </tr>
-
-            <tr>
-              <td>SynWeatherDiff<sup>†</sup></td>
-              <td>0.868</td><td>19.79</td><td><u>0.690</u></td>
-              <td><u>0.864</u></td><td>23.65</td><td><u>0.508</u></td>
-
-              <td><b>4.456</b></td><td><b>0.837</b></td><td><b>22.33</b></td><td><b>0.254</b></td><td><b>0.795</b></td>
-            </tr>
-
-          </tbody>
-        </table>
+        
+        <div class="hero-body">
+          <img src="assets/ruler_bench/images/paper/task_result.png" style="width:100%; margin-bottom:10px" alt="Teaser." />
+          <p style="margin-top: 0;">
+            <b>Average performance of video generation models across different tasks on RULER-Bench</b>. Video models generally perform best on tasks in Humanity and Hypothesis, while showing lower performance on Vision and Game categories. 
+          </p>
         </div>
-
 
   </section>
 
-  <!-- More Results -->
-  <!-- <section class="section" style="margin-top:-50px; margin-bottom:-50px;">
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <div class="section-title">
-          <h2 class="title is-3 is-centered">Comparison with Existing Methods </h2>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <div class="publication-img">
-              <img id="architecture" src="assets/artimuse/images/paper/aigc_comp_page-0001.jpg"
-                style="width:800px; margin-top:10px;margin-bottom:10px;" />
-              <img id="architecture" src="assets/artimuse/images/paper/photo_comp_page-0001.jpg"
-                style="width:800px; margin-top:10px;margin-bottom:10px;" />
-              <img id="architecture" src="assets/artimuse/images/paper/painting_comp_page-0001.jpg"
-                style="width:800px; margin-top:10px;margin-bottom:10px;" />
+        <style>
+          .video-matrix {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 列模型视频 */
+            gap: 4px;
+          }
+      
+          .matrix-header {
+            display: contents;
+            font-weight: bold;
+            text-align: center;
+          }
+      
+          .matrix-header > div {
+            /* background-color: #f0f4ff; */
+            border-radius: 4px;
+            text-align: center;
+          }
+      
+          .matrix-row {
+            display: contents;
+            /* background-color: #bbdefb; */
+          }
+      
+          .video-matrix video {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            margin: 0%;
+            /* background-color: #bbdefb; */
+          }
+      
+          .scenario-prompt {
+            grid-column: 1 / -1;      /* 横跨所有列 */
+            font-size: 0.65rem;       /* 字体更小 */
+            font-weight: 600;
+            font-style: italic;       /* 斜体 */
+            color: #666666;           /* 灰色字体 */
+            border-radius: 4px;
+            padding: 3px 5px;         /* 更紧凑的内边距 */
+            text-align: left;         /* 左对齐 */
+            /* background-color: #e0f0ff; */ /* 保持注释状态，去掉背景色 */
+          }
+        </style>
+      
+        <h2 class="title is-3 has-text-centered"
+            style="margin-bottom: 0.5rem;
+                   background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+                   -webkit-background-clip: text;
+                   -webkit-text-fill-color: transparent;
+                   font-weight: 700;">
+          Generated Videos
+        </h2>
+      
+        <div style="width: 60px; height: 3px; background-color: #60a5fa; margin: 0 auto 1.5rem auto; border-radius: 2px;"></div>
+      
+        <div class="video-matrix">
+          <!-- 列标题 -->
+          <div class="matrix-header">
+            <div>Veo3.1</div>
+            <div>Veo2</div>
+            <div>Sora2</div>
+            <div>PixelVerse-V5</div>
+            <div>Wan2.5</div>
+            <div>Seedance1.0-pro</div>
+          </div>
+      
+          <!-- Scenario 1 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_1.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_1.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_1.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_1.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_1.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_1.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              Please correct the bicycle's wheel shape anomaly so that the vehicle can function properly.
             </div>
           </div>
+      
+          <!-- Scenario 2 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_2.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_2.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_2.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_2.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_2.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_2.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              First add 0.5 mL of 0.1 M dilute hydrochloric acid and observe the litmus color change; then add 1 mL of 0.1 M dilute sodium hydroxide, recording the color change and estimating the final pH.
+            </div>
+          </div>
+      
+          <!-- Scenario 3 -->
+          <!-- <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_3.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_3.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_3.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_3.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_3.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_3.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              Scenario 3: prompt 内容
+            </div>
+          </div> -->
+      
+          <!-- Scenario 4 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_4.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_4.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_4.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_4.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_4.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_4.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              Increase the number of pink paperclips in the input image so that there are exactly five partially overlapping paperclips, arranged in a visually natural stacked formation where each clip slightly overlaps the next, maintaining consistent angle, scale, and lighting as in the original pair.
+            </div>
+          </div>
+      
+          <!-- Scenario 5 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_5.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_5.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_5.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_5.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_5.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_5.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              A student has just learned that their exam results are excellent, exceeding expectations.
+            </div>
+          </div>
+      
+          <!-- Scenario 6 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_6.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_6.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_6.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_6.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_6.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_6.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              The process of a tadpole transforming into a frog.
+            </div>
+          </div>
+      
+          <!-- Scenario 7 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_7.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_7.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_7.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_7.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_7.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_7.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              Fill a U-shaped transparent tube with colored water so that both arms have the same initial height. Add extra colored water to the left arm and observe the water levels in both arms.
+            </div>
+          </div>
+      
+          <!-- Scenario 8 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_8.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_8.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_8.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_8.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_8.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_8.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              In an office, thick smoke and small flames are rising from a pile of paper near a power socket. Several employees notice the fire spreading quickly across nearby papers and office supplies. They look around the room, searching for a way to extinguish it.
+            </div>
+          </div>
+      
+          <!-- Scenario 9 -->
+          <div class="matrix-row">
+            <video src="assets/ruler_bench/videos/model_1_scenario_9.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_2_scenario_9.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_3_scenario_9.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_4_scenario_9.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_5_scenario_9.mp4" autoplay muted loop></video>
+            <video src="assets/ruler_bench/videos/model_6_scenario_9.mp4" autoplay muted loop></video>
+            <div class="scenario-prompt">
+              Observe the lava flow over several years under continuous volcanic activity, noting changes along its path.
+            </div>
+          </div>
+      
         </div>
-        <p style="margin-top: 0;">
-
-        </p>
-
       </div>
-    </div>
-  </section> -->
-
-<!--  &lt;!&ndash; BibTeX &ndash;&gt;-->
-<!--  <section class="hero is-light is-small" id="BibTeX">-->
-<!--    <div class="container is-max-desktop content" style="margin-top: 40px; margin-bottom: 20px;">-->
-<!--      <h2 class="title">BibTeX</h2>-->
-<!--      <p>If you find our work useful, please consider citing our paper:</p>-->
-<!--      <pre><code>@misc{cao2025artimusefinegrainedimageaesthetics,-->
-<!--      title={SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer},-->
-<!--      author={Shuo Cao and Nan Ma and Jiayang Li and Xiaohui Li and Lihao Shao and Kaiwen Zhu and Yu Zhou and Yuandong Pu and Jiarui Wu and Jiaquan Wang and Bo Qu and Wenhai Wang and Yu Qiao and Dajuin Yao and Yihao Liu},-->
-<!--      year={2025},-->
-<!--      eprint={2507.14533},-->
-<!--      archivePrefix={arXiv},-->
-<!--      primaryClass={cs.CV},-->
-<!--      url={https://arxiv.org/abs/2507.14533}, -->
-<!--}</code></pre>-->
-
-      <!-- <p>Our related projects: <a href="https://vchitect.github.io/Evaluation-Agent-project/" target="_blank"
-          style="color: #007BFF;">Evaluation Agent</a></p>
-      <pre><code>@article{zhang2024evaluationagent,
-  title = {Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models},
-  author = {Zhang, Fan and Tian, Shulin and Huang, Ziqi and Qiao, Yu and Liu, Ziwei},
-  journal={arXiv preprint arXiv:2412.09645},
-  year = {2024}
-}</code></pre> -->
     </div>
   </section>
-
-
-  <!-- footer
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="https://vchitect.github.io/artimuse-project/">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/Vchitect/artimuse" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-            <p>
-              Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you
-              want to reuse their <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit
-              them appropriately.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer> -->
 
 </body>
 
